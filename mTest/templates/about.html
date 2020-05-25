@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>About us</h1>
+  <p align="justify">MMAT (<strong>M</strong>odelling <strong>M</strong>ethod <strong>A</strong>dvisory <strong>Tool</strong>) is a web-based standalone platform for protein modeling aid and help. The lack of easy interpretation of the modeling results and the lack in rules that make a protein qualified for a certain modeling method were the causes of the creation of this tool.
+  It employs Biopython for all the logical processing and NCBI offline databases for the comparative processes. It has an automated updating module in regards of the NCBI databases for constant revision of the datasets and addition of new database entries.</p>
+  <p align="justify">The pipeline consists of three general steps: using comparative genomics to obtain a sequence similarity value, computing the correlation of the value and other factors with a certain modeling method, displaying the results with links to automatically submit the query.
+  BLAST is an algorithm for comparing primary biological sequence information, such as amino-acid sequences of proteins. In the current situation, XYZ uses this comparison making algorithm to predict the similarity of the given query sequence to all the sequences present in the NCBI database. The process is known as local alignment and it is a simple and efficient way of comparing the query sequence to tens and thousands of sequences already in the NCBI database.
+  The similarity score obtained from BLAST can be directly correlated to certain modeling methods. The sequence similarity value correlation has been implemented in the pipeline.
+  At a sequence similarity of more than 60%, the program suggests the user to employ Homology modeling as the main method for modeling their protein.
+  At a sequence similarity of less than 60% but more than 30%, the program informs the user to employ Threading or Fold recognition modeling as the main method for modeling their protein.
+  At a sequence similarity of less than 30% where no perfect structure is actually present for the query protein, the program suggests the user to employ Ab Initio modeling as the main method for modeling their protein.
+  The Homology modeling method suggested by the pipeline has three options, a direct submission based ModWeb (Sali lab) API, a link to a standalone Modeller software and a link for SwissModel.
+  The Threading or Fold recognition modeling method suggested by the program has six options. The program suggests links for the following websites: iTasser, Phyre2, Muster, Novafold, Int-FOLD and Raptor X.
+  The Ab Initio modeling method suggested by the program has four options. The program suggests links for the following websites: Quark, iTasser, Robetta and Bhageerath.</p>
+{% endblock %}

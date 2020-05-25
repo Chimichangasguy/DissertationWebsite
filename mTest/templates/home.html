@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+input[type=submit] {
+  width: 20em;  height: 4em;
+  border: none;
+  cursor: pointer;
+  background-color: #cf8032;
+  color: white;
+  border-radius: 10px;
+}
+input[type=submit]:hover {
+  background-color: #945c25;
+}
+textarea{
+  border-radius: 5px;
+}
+</style>
+  <center><h4 style="color:green">Welcome to ModelAid</h4></center>
+  <p align:"justify">Just chuck your sequence here, wait for a couple of minutes and VOILA! You'll get a result which will link you to multiple tools for the respective modeling method.</p>
+  <h5>Enter a title:</h5>
+  <textarea cols="119" rows="1" name = "title"></textarea>
+  <br><br><h5>Enter your sequence:</h5>
+  <form action="{% url 'decided' %}">
+   <textarea cols="119" rows="10" name="sequence"></textarea>
+   <br><br>
+   <center><input type="submit" value="Submit" /></center>
+  </form>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'decided.html' %}
+{% block 'body' %}
+<h4>Input sequence:</h4>
+{{ sequence|safe }}<br><br>
+<h6>Time taken by the program: {{ eta|safe }} mins. <br>The properties of the sequence provided are:</h6>
+<ul>
+  <li>Number of amino acids: {{ count|safe }}</li>
+  <li>Molecular weight: {{ molwt|safe }} Da</li>
+  <li>Aromaticity index: {{ arom|safe }}</li>
+  <li>Reduced Molar Extinction Coefficient: {{ mec|safe }}</li>
+  <li>Instability Index: {{ instabdex|safe }} which means your protein is <strong>{{ inststr|safe }}</strong></li>
+  <li>Isoelectric point: {{ pi|safe }}</li>
+</ul>
+<h4>We suggest <strong>{{ m|safe }}</strong> as a way to model the protein given</h4>
+<p>There are several tools that can be used for homology modeling, a few of them have been listed below:</p>
+  <div class="row" id="link">{{ link1|safe }}<!-- <a href="{% url 'webmodshort' %}">WebMod (Online)</a></div><p id="linklink">Click this link to submit a request on WebMod in the same session.</p> -->Test</a><br/>
+  <div class="row" id="link">{{ link2|safe }}<!--<a href="https://salilab.org/modeller/download_installation.html">Modeller (Standalone)</a></div><br>-->
+  <div class="row" id="link">{{ link3|safe }}<!--<a href="https://swissmodel.expasy.org/interactive">SwissModel</a></div>-->
+{% endblock %}

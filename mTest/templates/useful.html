@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <style>
+  div.card-body {
+    margin: auto;
+    width: 100%;
+  }
+  hr {
+    border-top: 2px solid red;
+  }
+  td {
+    text-align: left;
+    padding: 10px;
+    vertical-align:top;
+  }
+  div.col {
+    border-color: #e3dfde;
+    text-align: center;
+    margin: auto;
+  }
+  div.col a:hover{
+    background-color: #c8fa00;
+    padding: 5px;
+  }
+  </style>
+
+  <center><h1>Useful Links</h1></center><br><br>
+  <div class="row">
+    <div class="col"><a href="#b1">Nucleic Acid Analysis</a></div>
+    <div class="col"><a href="#b2">Protein Sequence Analysis</a></div>
+    <div class="col"><a href="#b3">Protein Structure Analysis</a></div>
+    <div class="col"><a href="#b4">Miscellaneous tools</a></div>
+  </div>
+  <hr>
+
+  <div id="b1">
+    <table>
+      <tr>
+        <td><a href="https://www.ncbi.nlm.nih.gov/tools/vecscreen/">VecScreen:</a></td>
+        <td><p>It screens your DNA sequence for potential vector sequence.</p><td>
+      </tr>
+      <tr>
+        <td><a href="http://heimanlab.com/cut2.html">WebCutter:</a></td>
+        <td><p>It is an online tool for analyzing DNA sequences with restriction enzymes.</p></td>
+      </tr>
+      <tr>
+        <td><a href="http://www.ifti.org/cgi-bin/ifti/Tfsitescan.pl">Tfsitescan:</a></td>
+        <td><p>This tool is intended for promoter sequence analysis and works best with sequences of ~500 nt.</p></td>
+      </tr>
+      <tr>
+        <td><a href="https://consurf.tau.ac.il">ConSurf:</a></td>
+        <td><p>Server for the Identification of Functional Regions in Proteins.</p></td>
+      </tr>
+      <tr>
+        <td><a href="http://www.cbs.dtu.dk/services/RNAmmer/">RNAmmer</a></td>
+        <td><p>The server predicts 5s/8s, 16s/18s, and 23s/28s ribosomal RNA in full genome sequences.</p></td>
+      </tr>
+    </table>
+  </div>
+  <hr>
+
+  <div id="b2">
+    <table>
+      <tr>
+        <td><a href = "http://www.ebi.ac.uk/interpro/search/sequence/">InterProScan:</a></td>
+        <td><p>It is a resource that provides functional analysis of protein sequences by classifying them into families and predicting the presence of domains and important sites.</p></td>
+      </tr>
+      <tr>
+        <td><a href = "http://2zip.molgen.mpg.de/index.html">2ZIP:</a></td>
+        <td><p>Predicts Leucine Zippers in your amino acid sequence.</p></td>
+      </tr>
+      <tr>
+        <td><a href = "http://www.compbio.dundee.ac.uk/jpred4/index.html">Jpred:</a></td>
+        <td><p>It is a Protein Secondary Structure Prediction server and has been in operation since approximately 1998.</p></td>
+      </tr>
+      <tr>
+        <td><a href = "https://web.expasy.org/peptide_mass/">PeptideMass:</a></td>
+        <td><p>It cleaves a protein sequence from the UniProt Knowledgebase (Swiss-Prot and TrEMBL) or a user-entered protein sequence with a chosen enzyme, and computes the masses of the generated peptides.</p></td>
+      </tr>
+      <tr>
+        <td><a href="http://dis.embl.de">DisEMBL:</a></td>
+        <td><p>DisEMBL is a computational tool for prediction of disordered/unstructured regions within a protein sequence.</p></td>
+      </tr>
+      <tr>
+        <td><a href="http://www.cbs.dtu.dk/services/SignalP/">SignalP:</a></td>
+        <td><p>The SignalP 5.0 server predicts the presence of signal peptides and the location of their cleavage sites in proteins from Archaea, Gram-positive Bacteria, Gram-negative Bacteria and Eukarya.
+         Protein sequences should be not less than 10 amino acids. The maximum number of proteins is 5000.</p></td>
+      </tr>
+      <tr>
+        <td><a href="http://genetics.bwh.harvard.edu/pph2/">PolyPhen-2:</a></td>
+        <td><p>PolyPhen-2 (Polymorphism Phenotyping v2) is a tool which predicts possible impact of an amino acid substitution on the structure and function of a human protein using straightforward physical and comparative considerations.</p></td>
+      </tr>
+  </table>
+  </div>
+  <hr>
+
+  <div id="b3">
+    <table>
+      <tr>
+        <td><a href = "http://iris.physics.iisc.ernet.in/psap/">PSAP:</a></td>
+        <td><p>A web based suite for protein structure analysis.</p></td>
+      </tr>
+      <tr>
+        <td><a href = "https://servicesn.mbi.ucla.edu/SAVES/">SAVES:</a></td>
+        <td><p>This meta server is designed to be a collective of results for various programs (ex. WHATCHECK, PROCHECK, ERRAT, Verify3D, PROVE).</p></td>
+      </tr>
+      <tr>
+        <td><a href = "http://www.swissparam.ch">SwissParam:</a></td>
+        <td><p>This service provides topology and parameters for small organic molecules compatible with the CHARMM all atoms force field, for use with CHARMM and GROMACS.</p></td>
+      </tr>
+      <tr>
+        <td><a href = "http://agadir.crg.es">Agardir:</a></td>
+        <td><p>Agadir predicts the helical behaviour of monomeric peptides. It only considers short range interactions. Conditions such as pH, temperature and ionic strength are used in the calculation. Modifications of the termini are also allowed.
+          Keep in mind that Agadir is not a program to predict secondary structure of proteins.</p></td>
+      </tr>
+      <tr>
+        <td><a href = "https://www.ebi.ac.uk/msd-srv/prot_int/cgi-bin/piserver">PDBePISA:</a></td>
+        <td><p>It is an interactive tool for the exploration of macromolecular interfaces.</p></td>
+      </tr>
+      <tr>
+        <td><a href="http://sts.bioe.uic.edu/castp/index.html?3trg">CASTp:</a></td>
+        <td><p>CASTp identifies all pockets and voids on a protein structure and provides detailed delineation of all atoms participating in their formation.</p></td>
+      </tr>
+      <tr>
+        <td><a href="http://ekhidna2.biocenter.helsinki.fi/dali/">DALI:</a></td>
+        <td><p>The Dali server is a network service for comparing protein structures in 3D. You submit the coordinates of a query protein structure and Dali compares them against those in the Protein Data Bank (PDB).</p></td>
+      </tr>
+      <tr>
+        <td><a href="http://www.ebi.ac.uk/thornton-srv/databases/ProFunc/">ProFunc:</a></td>
+        <td><p>The aim of the ProFunc server is to help identify the likely biochemical function of a protein from its three-dimensional structure.</p></td>
+      </tr>
+      <tr>
+        <td><a href="https://consurf.tau.ac.il">ConSurf:</a></td>
+        <td><p>Server for the Identification of Functional Regions in Proteins.</p></td>
+      </tr>
+  </table>
+  </div>
+  <hr>
+
+  <div id="b4">
+    <table>
+      <tr>
+        <td><a href="http://gene2drug.tigem.it">Gene2Drug:</a></td>
+        <td><p>It ranks small molecules according to their ability to dysregulate an input set of pathways. Sets of pathways can be defined starting from a gene and exploiting its pathway annotations from a number of publicly available databases.</p></td>
+      </tr>
+      <tr>
+        <td><a href="http://blast.ncbi.nlm.nih.gov/Blast.cgi">BLAST:</a></td>
+        <td><p>It finds regions of similarity between biological sequences. The program compares nucleotide or protein sequences to sequence databases and calculates the statistical significance.</p><td>
+      </tr>
+      <tr>
+        <td><a href="https://www.ebi.ac.uk/Tools/msa/clustalo/">ClustalO:</a></td>
+        <td><p>It is a new multiple sequence alignment program that uses seeded guide trees and HMM profile-profile techniques to generate alignments between three or more sequences.</p><td>
+      </tr>
+      <tr>
+        <td><a href="https://www.ebi.ac.uk/Tools/msa/tcoffee/">T-Coffee:</a></td>
+        <td><p>It is a multiple sequence alignment program. Its main characteristic is that it will allow you to combine results obtained with several alignment methods.</p><td>
+      </tr>
+  </table>
+  </div>
+{% endblock %}

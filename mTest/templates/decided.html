@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+div.col {
+  border-color: #e3dfde;
+  text-align: center;
+  margin: auto;
+}
+div.col a:hover{
+  background-color: #c8fa00;
+  padding: 5px;
+}
+.tooltip { /* Container for our tooltip */
+ position: relative;
+ display: inline-block;
+}
+
+.tooltip .tooltiptext { /* This is for the tooltip text */
+ visibility: hidden;
+ width: 100px;
+ background-color: #555;
+ color: white;
+ text-align: center;
+ padding: 10px;
+ border-radius: 10px; /* Defines tooltip text position */
+ position: absolute;
+ z-index: 1;
+ top: -10px;
+ left: 110%;
+}
+
+.tooltip:hover .tooltiptext { /* Makes tooltip text visible when hovered on */
+ visibility: visible;
+}
+
+.tooltip .tooltiptext::after {
+ content: " ";
+ position: absolute;
+ top: 50%;
+ right: 100%; /* This will position the arrow on the left of the tooltip */
+ margin-top: -10px;
+ border-width: 10px;
+ border-style: solid;
+ border-color: transparent #555 transparent transparent; /* This will make the right border black*/
+}
+</style>
+  <h4>Input sequence:</h4>
+  {{ sequence|safe }}<br><br>
+  <h6>Time taken by the program: {{ eta|safe }} mins. <br>The properties of the sequence provided are:</h6>
+    <ul>
+      <li>Number of amino acids: {{ count|safe }}</li>
+      <li>Molecular weight: {{ molwt|safe }} Da</li>
+      <li>Aromaticity index: {{ arom|safe }}</li>
+      <li>Molar Extinction Coefficient: {{ mec|safe }} M<sup>-1</sup>cm<sup>-1</sup></li>
+      <li>Instability Index: {{ instabdex|safe }} which means your protein is <strong>{{ inststr|safe }}</strong></li>
+      <li>Isoelectric point: {{ pi|safe }}</li>
+    </ul>
+  <h4>We suggest <strong>{{ m|safe }}</strong> as a way to model the protein given</h4>
+  <p>There are several tools that can be used for homology modeling, a few of them have been listed below:</p>
+  <center>
+    <div class="row">
+      <div class="col" id="link">
+        <div class="col">{{ link1|safe }}</div>
+      </div>
+      <div class="col" id="link">
+        <div class="col">{{ link2|safe }}</div>
+      </div>
+      <div class="col" id="link">
+        <div class="col">{{ link3|safe }}</div>
+      </div>
+    </div><br>
+    <div class="row">
+      <div class="col" id="link">
+        <div class="col">{{ link4|safe }}</div>
+      </div>
+      <div class="col" id="link">
+        <div class="col">{{ link5|safe }}</div>
+      </div>
+      <div class="col" id="link">
+        <div class="col">{{ link6|safe }}</div>
+      </div>
+    </div>
+  </center><br>
+  <h6>After obtaining a structure please validate them using:</h6>
+  <ul>
+    <li><a href="https://servicesn.mbi.ucla.edu/SAVES/">SAVES</a></li>
+    <li><a href="http://iris.physics.iisc.ernet.in/cgi-bin/psap/inputform.pl">PSAP</a></li>
+    <li><a href = "http://www.swissparam.ch">SwissParam</a></li>
+    <li><a href = "https://www.ebi.ac.uk/msd-srv/prot_int/cgi-bin/piserver">PDBePISA</a></li>
+    <li><a href="http://ekhidna2.biocenter.helsinki.fi/dali/">DALI</a></li>
+    <li><a href="http://www.ebi.ac.uk/thornton-srv/databases/ProFunc/">ProFunc</a></li>
+  </ul>
+{% endblock %}
