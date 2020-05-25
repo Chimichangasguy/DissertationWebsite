@@ -71,22 +71,34 @@ def decide(request):
         return render(request, 'decided.html', {'m':model, 'link1':link1, 'link2':link2, 'link3':link3, 'link4':link4, 'link5':link5, 'link6':link6, 'eta':eta, 'sequence':res, 'count': count, 'molwt':m, 'arom':a, 'instabdex':i, 'inststr':c, 'pi':p, 'mec': mc})
     elif(60>cov and cov>30 and 60>ide and ide>30):
         model = "Threading/Fold recognition Modeling"
-        link1 = "a"
-        link2 = "b"
-        link3 = "c"
-        link4 = "d"
-        link5 = "e"
-        link6 = "f"
+        l1 = "https://zhanglab.ccmb.med.umich.edu/I-TASSER/"
+        l2 = "http://www.sbg.bio.ic.ac.uk/~phyre2/html/page.cgi?id=index"
+        l3 = "https://zhanglab.ccmb.med.umich.edu/MUSTER/"
+        l4 = "https://www.dnastar.com/software/nova-protein-modeling/"
+        l5 = "http://www.reading.ac.uk/bioinf/IntFOLD/"
+        l6 = "http://raptorx.uchicago.edu/StructPredV2/predict/"
+		link1 = "<a href={}>iTASSER</a>".format(l1)
+        link2 = "<a href={}>Phyre2</a>".format(l2)
+        link3 = "<a href={}>MUSTER</a>".format(l3)
+        link4 = "<a href={}>NovaFold (Standalone)</a>".format(l4)
+        link5 = "<a href={}>IntFOLD</a>".format(l5)
+        link6 = "<a href={}>RaptorX</a>".format(l6)
         res, count, m, a, i, c, p, mc = prot()
         return render(request, 'decided.html', {'m':model,'link1':link1, 'link2':link2, 'link3':link3, 'link4':link4, 'link5':link5, 'link6':link6, 'eta':eta, 'sequence':res, 'count': count, 'molwt':m, 'arom':a, 'instabdex':i, 'inststr':c, 'pi':p, 'mec':mec})
     elif(30>cov and cov>0 and 30>ide and ide>0):
         model = "Ab Initio Modeling"
-        link1 = "a"
-        link2 = "b"
-        link3 = "c"
-        link4 = "d"
-        link5 = "e"
-        link6 = "f"
+        l1 = "https://zhanglab.ccmb.med.umich.edu/I-TASSER/"
+        l2 = "https://zhanglab.ccmb.med.umich.edu/QUARK/"
+        l3 = "http://new.robetta.org"
+        l4 = "http://www.scfbio-iitd.res.in/bhageerath/index.jsp"
+        l5 = "https://yanglab.nankai.edu.cn/trRosetta/"
+        l6 = "https://www.dnastar.com/software/nova-protein-modeling/"
+		link1 = "<a href={}>iTASSER</a>".format(l1)
+        link2 = "<a href={}>QUARK</a>".format(l2)
+        link3 = "<a href={}>Robetta</a>".format(l3)
+        link4 = "<a href={}>Bhageerath</a>".format(l4)
+        link5 = "<a href={}>trRosetta</a>".format(l5)
+        link6 = "<a href={}>NovaFold (Standalone)</a>".format(l6)
         res, count, m, a, i, c, p, mc = prot()
         return render(request, 'decided.html', {'m':model, 'link1':link1, 'link2':link2, 'link3':link3, 'link4':link4, 'link5':link5, 'link6':link6, 'eta':eta, 'sequence':res, 'count': count, 'molwt':m, 'arom':a, 'instabdex':i, 'inststr':c, 'pi':p, 'mec': mc})
     else:
@@ -94,12 +106,12 @@ def decide(request):
     #return render(request, 'test.html')
 
 def save(text):
-    with open("mTest/media/query.txt", "w") as f:
+    with open("media/query.txt", "w") as f:
         f.write(text)
         f.close()
 
 def prot():
-    for seq_rec in SeqIO.parse("mTest/media/query.txt", "fasta"):
+    for seq_rec in SeqIO.parse("media/query.txt", "fasta"):
         res = str(seq_rec.seq)
     X = ProtParam.ProteinAnalysis(res)
     count = len(res)
